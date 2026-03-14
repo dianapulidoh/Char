@@ -2,44 +2,159 @@
 <html>
 
 <head>
-<title>Para mi amor ❤️</title>
+<meta charset="UTF-8">
+<title>Felices 2 meses Char ❤️</title>
+
 <style>
+
 body{
 font-family: Arial;
+background: linear-gradient(#ffd6e7,#ffc2d1);
 text-align:center;
-background-color:#ffd6e7;
+overflow-x:hidden;
 }
 
 h1{
 color:#ff2e63;
+font-size:40px;
 }
 
-.carta{
+section{
 background:white;
-padding:20px;
-margin:40px;
+padding:25px;
+margin:30px;
 border-radius:15px;
+box-shadow:0px 5px 10px rgba(0,0,0,0.1);
 }
-</style>
 
+button{
+background:#ff2e63;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff4d79;
+}
+
+img{
+width:200px;
+border-radius:10px;
+margin:10px;
+}
+
+#carta{
+display:none;
+}
+
+/* corazones */
+
+.corazon{
+position:fixed;
+color:red;
+animation:flotar 5s linear infinite;
+}
+
+@keyframes flotar{
+0%{transform:translateY(0);}
+100%{transform:translateY(-100vh);}
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>Para mi novio ❤️</h1>
+<h1>Para mi Charlyyyy </h1>
 
-<div class="carta">
-<p>
-Desde que llegaste a mi vida todo es más bonito.
-Gracias por hacerme feliz todos los días.
+<section>
+<h2> Llevamo todo este tiempo juntitos: </h2>
+<p id="contador"></p>
+</section>
+
+<section>
+<h2>💌 TEAMOOOO </h2>
+
+<button onclick="mostrarCarta()">Open</button>
+
+<p id="carta">
+Gracias por todo lo que haces por mi charly, creo que 
+fue un mes lleno de pequeños problemas en nuestra relación
+los cuales no son nada pq juntos podemos contra todo, estamos juntos contra el problema
+siempre siempreeeee, te amo millones, ojalá puediera llevarte conmigo a todas partes
+eres y serás siempre lo que le da color a mi vida, quedate siempre a mi ladito plis 
+
+Eres mi lugar favorito ❤️ lo eres absolutamente todo para mi 
 </p>
 
-<p>
-Esta pequeña página es solo para recordarte cuánto te amo.
-</p>
+</section>
 
-<p>💖 Siempre tú y yo 💖</p>
-</div>
+<section>
+<h2>📷 Nuestros recuerdos</h2>
+
+<img src="FOTO1.jpg">
+<img src="FOTO2.jpg">
+<img src="FOTO3.jpg">
+
+</section>
+
+<section>
+<h2>🎵 Canciones que te dedico </h2>
+
+<iframe style="border-radius:12px" 
+src="https://open.spotify.com/playlist/0BGGxd5ICRmeRUzXR3gUjU?si=yy5mxdIUTcCjiq8yiHQUGg"0"></iframe>
+
+</section>
+
+<script>
+
+/* mostrar carta */
+
+function mostrarCarta(){
+document.getElementById("carta").style.display="block";
+}
+
+/* contador de tiempo */
+
+const fechaInicio = new Date("2026-01-17");
+
+function actualizarContador(){
+
+const hoy = new Date();
+const diferencia = hoy - fechaInicio;
+
+const dias = Math.floor(diferencia / (1000*60*60*24));
+
+document.getElementById("contador").innerHTML =
+"Llevamos juntos " + dias + " días ❤️";
+
+}
+
+setInterval(actualizarContador,1000);
+
+/* corazones */
+
+setInterval(()=>{
+
+const corazon = document.createElement("div");
+corazon.classList.add("corazon");
+corazon.innerHTML="❤️";
+
+corazon.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(corazon);
+
+setTimeout(()=>{
+corazon.remove();
+},5000);
+
+},500);
+
+</script>
 
 </body>
 </html>
