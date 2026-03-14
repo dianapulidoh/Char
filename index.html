@@ -6,6 +6,35 @@
 <title>Felices 2 meses Char ❤️</title>
 
 <style>
+.top{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:30px;
+padding:30px;
+flex-wrap:wrap;
+}
+
+.contador{
+flex:1;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.carta-container{
+flex:1;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+#carta{
+display:none;
+margin-top:10px;
+}
 .galeria{
 display:flex;
 flex-wrap:wrap;
@@ -109,6 +138,19 @@ border-radius:50%;
 animation:girar 4s linear infinite;
 }
 
+.playlist-cuadro{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+
+.playlist-img{
+width:200px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+  
 .centro{
 width:50px;
 height:50px;
@@ -206,15 +248,18 @@ opacity:0;
 
 <h1>Para mi Charlyyyy </h1>
 
-<section>
-<h2> Llevamo todo este tiempo juntitos: </h2>
+<section class="top">
+
+<div class="contador">
+<h2> Llevamos todo este tiempo juntitos:</h2>
 <p id="contador"></p>
-</section>
+</div>
 
-<section>
-<h2>💌 TEAMOOOO </h2>
+<div class="carta-container">
 
-<button onclick="mostrarCarta()">Open</button>
+<h2>💌 Una cartita para ti </h2>
+
+<button onclick="mostrarCarta()"> Open </button>
 
 <p id="carta">
 Gracias por todo lo que haces por mi charly, creo que 
@@ -226,6 +271,7 @@ eres y serás siempre lo que le da color a mi vida, quedate siempre a mi ladito 
 Eres mi lugar favorito ❤️ lo eres absolutamente todo para mi 
 </p>
 
+</div>
 </section>
 
 <section>
@@ -274,17 +320,26 @@ Eres mi lugar favorito ❤️ lo eres absolutamente todo para mi
     
   </div>
 </section>
+<section class="playlist">
 
-<section>
-<h2>🎵 Canciones que te dedico </h2>
+<h2>🎵 Canciones que te dedico 🎵</h2>
 
-<iframe style="border-radius:12px" 
-src="https://open.spotify.com/playlist/0BGGxd5ICRmeRUzXR3gUjU?si=yy5mxdIUTcCjiq8yiHQUGg"0"></iframe>
+<div class="playlist-cuadro">
+
+<img src="descarga.webp" class="playlist-img">
+
+<audio controls loop>
+<source src="Kevin Kaarl - Toda Esta Ciudad (Lyric Video).mp4" type="audio/mpeg">
+</audio>
+
+</div>
+</section>
+  
 <div class="vinilo-container">
 
 <div class="vinilo">
 <div class="etiqueta">
-<img src="portada.jpg">
+<img src="♡.jpg">
 </div>
 </div>
 
