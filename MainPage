@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Para mi amor ❤️</title>
+<style>
+body{
+font-family: Arial;
+text-align:center;
+background-color:#ffd6e7;
+}
+
+h1{
+color:#ff2e63;
+}
+
+.carta{
+background:white;
+padding:20px;
+margin:40px;
+border-radius:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Para mi novio ❤️</h1>
+
+<div class="carta">
+<p>
+Desde que llegaste a mi vida todo es más bonito.
+Gracias por hacerme feliz todos los días.
+</p>
+
+<p>
+Esta pequeña página es solo para recordarte cuánto te amo.
+</p>
+
+<p>💖 Siempre tú y yo 💖</p>
+</div>
+
+</body>
+</html>
