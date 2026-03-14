@@ -79,14 +79,21 @@ transparent 4px
 }
 
 .etiqueta{
-width:60px;
-height:60px;
-background:#ff4d79;
+width:70px;
+height:70px;
 border-radius:50%;
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
+overflow:hidden;
+box-shadow:0 0 5px rgba(0,0,0,0.4);
+}
+
+.etiqueta img{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 @keyframes girar{
@@ -174,6 +181,24 @@ animation:flotar 5s linear infinite;
 100%{transform:translateY(-100vh);}
 }
 
+  .nota{
+position:absolute;
+top:55%;
+font-size:24px;
+animation:flotar 3s linear forwards;
+}
+
+@keyframes flotar{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+
+100%{
+transform:translateY(-150px);
+opacity:0;
+}
+}
 </style>
 </head>
 
@@ -259,9 +284,29 @@ src="https://open.spotify.com/playlist/0BGGxd5ICRmeRUzXR3gUjU?si=yy5mxdIUTcCjiq8
   
   <div class="vinilo">
     <div class="etiqueta"></div>
+    <img src="♡.jpg"></div>
   </div>
 </section>
 
+  <script>
+
+setInterval(()=>{
+
+const nota=document.createElement("div");
+nota.innerHTML="🎵";
+nota.classList.add("nota");
+
+nota.style.left=(50 + Math.random()*10 -5) + "%";
+
+document.body.appendChild(nota);
+
+setTimeout(()=>{
+nota.remove();
+},3000);
+
+},800);
+
+</script>
 <script>
 
 /* mostrar carta */
