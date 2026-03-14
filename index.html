@@ -6,7 +6,70 @@
 <title>Felices 2 meses Char ❤️</title>
 
 <style>
+.galeria{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
 
+.polaroid{
+background:white;
+padding:10px 10px 20px 10px;
+width:220px;
+box-shadow:0 8px 15px rgba(0,0,0,0.2);
+transform:rotate(-2deg);
+transition:0.3s;
+}
+
+.polaroid:nth-child(even){
+transform:rotate(2deg);
+}
+
+.polaroid img{
+width:100%;
+border-radius:5px;
+}
+
+.polaroid p{
+margin-top:10px;
+font-family:inherit;
+}
+
+.polaroid:hover{
+transform:scale(1.05) rotate(0deg);
+}
+
+.vinilo{
+width:200px;
+height:200px;
+margin:20px auto;
+position:relative;
+}
+
+.disco{
+width:100%;
+height:100%;
+background: radial-gradient(circle at center, #222 30%, #000 70%);
+border-radius:50%;
+animation:girar 4s linear infinite;
+}
+
+.centro{
+width:50px;
+height:50px;
+background:white;
+border-radius:50%;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+@keyframes girar{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
 body{
 font-family: Arial;
 background: linear-gradient(#ffd6e7,#ffc2d1);
@@ -95,16 +158,49 @@ Eres mi lugar favorito ❤️ lo eres absolutamente todo para mi
 
 <section>
 <h2>TEAMOOOOO</h2>
+  <div class="galeria">
 
+<div class="polaroid">    
 <img src="IMG_0004.jpeg">
+<p>youuuuu</p>
+</div>
+
+<div class="polaroid">  
 <img src="IMG_5503.png">
+<p>bzzzzzz</p>
+</div>
+    
+<div class="polaroid">  
 <img src="94682bcf-ff12-4701-b52d-8f968e3716d4.jpeg">
+<p>grrrrrr</p>
+</div>
+    
+<div class="polaroid">  
 <img src="bcb97794-035e-46fc-81ec-fa044f623188.jpeg">
+<p>jijijijiji</p>
+</div>
+    
+<div class="polaroid">  
 <img src="IMG_5331.jpeg">  
+<p>omgggg</p>
+</div>
+    
+<div class="polaroid">  
 <img src="IMG_5162.jpeg">  
-<img src="E86AFE1F-127D-4BE6-9605-C27DFB9D1E26.jpeg">  
+<p>dame la mano</p>
+</div>
+    
+<div class="polaroid">  
+<img src="E86AFE1F-127D-4BE6-9605-C27DFB9D1E26.jpeg"> 
+<p>nyaaaaa</p>
+</div>
+    
+<div class="polaroid">  
 <img src="0cb934c3-3744-4559-969f-2980b845d227.jpeg">
-  
+<p>uwu</p>
+</div>
+    
+  </div>
 </section>
 
 <section>
@@ -112,7 +208,10 @@ Eres mi lugar favorito ❤️ lo eres absolutamente todo para mi
 
 <iframe style="border-radius:12px" 
 src="https://open.spotify.com/playlist/0BGGxd5ICRmeRUzXR3gUjU?si=yy5mxdIUTcCjiq8yiHQUGg"0"></iframe>
-
+<div class="vinilo">
+  <div class="disco"></div>
+  <div class="centro"></div>
+</div>
 </section>
 
 <script>
