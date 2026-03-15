@@ -19,6 +19,36 @@ color:#ff2e63;
 font-size:40px;
 }
 
+/* titulo */
+
+.titulo-container{
+position:relative;
+display:inline-block;
+margin-top:20px;
+}
+
+.corazones-titulo{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+}
+
+.corazon-titulo{
+position:absolute;
+bottom:-10px;
+font-size:18px;
+animation:subir-corazon 4s linear forwards;
+}
+
+@keyframes subir-corazon{
+0%{transform:translateY(0) scale(0.8);opacity:1;}
+100%{transform:translateY(-120px) scale(1.2);opacity:0;}
+}
+
 section{
 background:white;
 padding:25px;
@@ -50,7 +80,7 @@ gap:30px;
 flex-wrap:wrap;
 }
 
-.contador, .carta-container{
+.contador,.carta-container{
 flex:1;
 background:white;
 padding:20px;
@@ -63,7 +93,7 @@ display:none;
 margin-top:10px;
 }
 
-/* galeria polaroid */
+/* galeria */
 
 .galeria{
 display:flex;
@@ -94,7 +124,7 @@ border-radius:5px;
 transform:scale(1.05) rotate(0deg);
 }
 
-/* zona musica */
+/* musica */
 
 .musica-area{
 display:flex;
@@ -106,7 +136,6 @@ gap:40px;
 
 .playlist{
 flex:1;
-text-align:center;
 }
 
 .playlist-img{
@@ -128,11 +157,8 @@ margin:40px;
 width:220px;
 height:220px;
 border-radius:50%;
-background:
-radial-gradient(circle at center, #444 0%, #111 60%, #000 100%);
-box-shadow:
-0 0 20px rgba(161,12,61,1),
-inset 0 0 30px rgba(255,255,255,0.1);
+background:radial-gradient(circle at center,#444 0%,#111 60%,#000 100%);
+box-shadow:0 0 20px rgba(161,12,61,1), inset 0 0 30px rgba(255,255,255,0.1);
 animation:girar 4s linear infinite;
 position:relative;
 }
@@ -140,19 +166,10 @@ position:relative;
 .vinilo::before{
 content:"";
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
 border-radius:50%;
-background:
-repeating-radial-gradient(
-circle,
-rgba(255,255,255,0.05) 0px,
-rgba(255,255,255,0.05) 1px,
-transparent 2px,
-transparent 4px
-);
+background:repeating-radial-gradient(circle,rgba(255,255,255,0.05) 0px,rgba(255,255,255,0.05) 1px,transparent 2px,transparent 4px);
 }
 
 .etiqueta{
@@ -166,42 +183,6 @@ transform:translate(-50%,-50%);
 overflow:hidden;
 }
 
-.titulo-container{
-position:relative;
-display:inline-block;
-margin-top:20px;
-}
-
-.corazones-titulo{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-}
-
-.corazon-titulo{
-position:absolute;
-bottom:-10px;
-font-size:18px;
-animation:subir-corazon 4s linear forwards;
-opacity:0.8;
-}
-
-@keyframes subir-corazon{
-0%{
-transform:translateY(0) scale(0.8);
-opacity:1;
-}
-
-100%{
-transform:translateY(-120px) scale(1.2);
-opacity:0;
-}
-}
-  
 .etiqueta img{
 width:100%;
 height:100%;
@@ -214,37 +195,17 @@ from{transform:rotate(0deg);}
 to{transform:rotate(360deg);}
 }
 
-/* corazones */
+/* corazones flotando */
 
 .corazon{
 position:fixed;
 color:red;
-animation:subir 60s linear infinite;
+animation:subir 10s linear infinite;
 }
 
 @keyframes subir{
 0%{transform:translateY(0);}
 100%{transform:translateY(-100vh);}
-}
-
-/* notas musicales */
-
-.nota{
-position:absolute;
-top:55%;
-font-size:24px;
-animation:flotar 3s linear forwards;
-}
-
-@keyframes flotar{
-0%{
-transform:translateY(0);
-opacity:1;
-}
-100%{
-transform:translateY(-150px);
-opacity:0;
-}
 }
 
 /* tablero */
@@ -270,24 +231,22 @@ justify-content:center;
 font-size:30px;
 }
 
-.blanca{
-background:#f0d9b5;
-}
-
-.negra{
-background:#b58863;
-}
+.blanca{background:#f0d9b5;}
+.negra{background:#b58863;}
 
 .pieza{
 cursor:pointer;
 font-size:35px;
+transition:0.2s;
+}
+
+.pieza:hover{
+transform:scale(1.2);
 }
 
 .destino{
 border:3px dashed pink;
 }
-
-/* mensaje */
 
 .mensaje-mate{
 opacity:0;
@@ -300,11 +259,12 @@ transition:0.6s;
 .mensaje-mate.visible{
 opacity:1;
 }
-  
+
 </style>
 </head>
 
 <body>
+
 <div class="titulo-container">
 <h1>Para mi Charly ❤️</h1>
 <div class="corazones-titulo"></div>
@@ -318,29 +278,21 @@ opacity:1;
 </div>
 
 <div class="carta-container">
-
 <h2>💌 Una cartita para ti</h2>
-
 <button onclick="mostrarCarta()">Open</button>
 
 <p id="carta">
-Gracias por todo lo que haces por mi charly, creo que fue un mes lleno de pequeños problemas en nuestra relación
-los cuales no son nada pq juntos podemos contra todo.  
-Siempre juntos contra el problema.  
+Gracias por todo lo que haces por mi charly.
+Eres y serás siempre lo que le da color a mi vida.
+Quédate siempre a mi ladito plis.
 
-Te amo millones, ojalá pudiera llevarte conmigo a todas partes.  
-Eres y serás siempre lo que le da color a mi vida.  
+Eres mi lugar favorito.
 
-Quédate siempre a mi ladito plis.  
-
-Eres mi lugar favorito, lo eres absolutamente todo para mi.  
-
-Con amor,  
+Con amor,
 Diana ❤️
 </p>
 
 </div>
-
 </section>
 
 <section>
@@ -349,45 +301,14 @@ Diana ❤️
 
 <div class="galeria">
 
-<div class="polaroid">
-<img src="IMG_0004.jpeg">
-<p>youuuuu</p>
-</div>
-
-<div class="polaroid">
-<img src="IMG_5503.png">
-<p>bzzzzzz</p>
-</div>
-
-<div class="polaroid">
-<img src="94682bcf-ff12-4701-b52d-8f968e3716d4.jpeg">
-<p>grrrrrr</p>
-</div>
-
-<div class="polaroid">
-<img src="bcb97794-035e-46fc-81ec-fa044f623188.jpeg">
-<p>jijijijiji</p>
-</div>
-
-<div class="polaroid">
-<img src="IMG_5331.jpeg">
-<p>omgggg</p>
-</div>
-
-<div class="polaroid">
-<img src="IMG_5162.jpeg">
-<p>dame la mano</p>
-</div>
-
-<div class="polaroid">
-<img src="E86AFE1F-127D-4BE6-9605-C27DFB9D1E26.jpeg">
-<p>nyaaaaa</p>
-</div>
-
-<div class="polaroid">
-<img src="0cb934c3-3744-4559-969f-2980b845d227.jpeg">
-<p>uwu</p>
-</div>
+<div class="polaroid"><img src="IMG_0004.jpeg"><p>youuuuu</p></div>
+<div class="polaroid"><img src="IMG_5503.png"><p>bzzzzzz</p></div>
+<div class="polaroid"><img src="94682bcf.jpeg"><p>grrrrrr</p></div>
+<div class="polaroid"><img src="bcb97794.jpeg"><p>jijijijiji</p></div>
+<div class="polaroid"><img src="IMG_5331.jpeg"><p>omgggg</p></div>
+<div class="polaroid"><img src="IMG_5162.jpeg"><p>dame la mano</p></div>
+<div class="polaroid"><img src="E86AFE1F.jpeg"><p>nyaaaaa</p></div>
+<div class="polaroid"><img src="0cb934c3.jpeg"><p>uwu</p></div>
 
 </div>
 
@@ -396,9 +317,7 @@ Diana ❤️
 <section class="musica-area">
 
 <div class="playlist">
-
 <h2>🎵 musiquita</h2>
-
 <img src="descarga.webp" class="playlist-img">
 
 <audio controls loop>
@@ -408,15 +327,11 @@ Diana ❤️
 </div>
 
 <div class="vinilo-container">
-
 <div class="vinilo">
-
 <div class="etiqueta">
 <img src="ae8d78d37f654e8cf76226a1f4eef95b.jpg">
 </div>
-
 </div>
-
 </div>
 
 </section>
@@ -445,97 +360,64 @@ Diana ❤️
 <div class="casilla negra"></div>
 <div class="casilla blanca"></div>
 <div class="casilla negra"></div>
-<div class="casilla blanca pieza" id="pieza">♕</div>
+
+<div class="casilla blanca">
+<span class="pieza" id="pieza">♕</span>
+</div>
 
 </div>
 
 <p id="mensajeMate" class="mensaje-mate">
-eres igual de lindo que este jaque mate jijijijiji 
-(aparte de ser mi favorito) 💌
+eres igual de lindo que este jaque mate jijijijiji (aparte de ser mi favorito) 💌
 </p>
 
 </section>
-  
 
 <script>
-
-/* carta */
 
 function mostrarCarta(){
 document.getElementById("carta").style.display="block";
 }
 
-/* contador */
-
-const fechaInicio = new Date("2026-01-17");
+const fechaInicio=new Date("2026-01-17");
 
 function actualizarContador(){
-
-const hoy = new Date();
-const diferencia = hoy - fechaInicio;
-
-const dias = Math.floor(diferencia/(1000*60*60*24));
-
-document.getElementById("contador").innerHTML =
-dias + " días ❤️";
-
+const hoy=new Date();
+const diferencia=hoy-fechaInicio;
+const dias=Math.floor(diferencia/(1000*60*60*24));
+document.getElementById("contador").innerHTML=dias+" días ❤️";
 }
 
 setInterval(actualizarContador,1000);
 
-/* corazones */
-
 setInterval(()=>{
-
 const corazon=document.createElement("div");
 corazon.classList.add("corazon");
 corazon.innerHTML="❤️";
-
 corazon.style.left=Math.random()*100+"vw";
-
 document.body.appendChild(corazon);
-
-setTimeout(()=>{
-corazon.remove();
-},5000);
-
+setTimeout(()=>{corazon.remove();},5000);
 },500);
 
-/* corazones detrás del titulo */
-
 setInterval(()=>{
-
 const contenedor=document.querySelector(".corazones-titulo");
-
 const corazon=document.createElement("div");
 corazon.classList.add("corazon-titulo");
-
 corazon.innerHTML="💖";
-
 corazon.style.left=Math.random()*100+"%";
-
 contenedor.appendChild(corazon);
-
-setTimeout(()=>{
-corazon.remove();
-},4000);
-
+setTimeout(()=>{corazon.remove();},4000);
 },700);
-
-/* movimiento jaque mate */
 
 const pieza=document.getElementById("pieza");
 const destino=document.getElementById("destino");
 const mensaje=document.getElementById("mensajeMate");
 
 pieza.addEventListener("click",()=>{
-
 destino.appendChild(pieza);
-
 mensaje.classList.add("visible");
-
 });
-  
+
 </script>
 
 </body>
