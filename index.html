@@ -247,6 +247,60 @@ opacity:0;
 }
 }
 
+/* tablero */
+
+.ajedrez-seccion{
+text-align:center;
+margin-top:40px;
+}
+
+.tablero{
+width:240px;
+display:grid;
+grid-template-columns:repeat(4,60px);
+margin:20px auto;
+}
+
+.casilla{
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+}
+
+.blanca{
+background:#f0d9b5;
+}
+
+.negra{
+background:#b58863;
+}
+
+.pieza{
+cursor:pointer;
+font-size:35px;
+}
+
+.destino{
+border:3px dashed pink;
+}
+
+/* mensaje */
+
+.mensaje-mate{
+opacity:0;
+margin-top:20px;
+font-size:20px;
+color:#ff2e63;
+transition:0.6s;
+}
+
+.mensaje-mate.visible{
+opacity:1;
+}
+  
 </style>
 </head>
 
@@ -367,6 +421,43 @@ Diana ❤️
 
 </section>
 
+<section class="ajedrez-seccion">
+
+<h2>♟️ El jaque mate del beso</h2>
+
+<div class="tablero">
+
+<div class="casilla blanca"></div>
+<div class="casilla negra"></div>
+<div class="casilla blanca"></div>
+<div class="casilla negra"></div>
+
+<div class="casilla negra"></div>
+<div class="casilla blanca"></div>
+<div class="casilla negra"></div>
+<div class="casilla blanca"></div>
+
+<div class="casilla blanca"></div>
+<div class="casilla negra"></div>
+<div class="casilla blanca"></div>
+<div class="casilla negra"></div>
+
+<div class="casilla negra"></div>
+<div class="casilla blanca"></div>
+
+<div class="casilla negra destino" id="destino"></div>
+
+<div class="casilla blanca pieza" id="pieza">♕</div>
+
+</div>
+
+<p id="mensajeMate" class="mensaje-mate">
+eres igual de lindo que este jaque mate jijijijiji 
+(aparte de ser mi favorito) 💌
+</p>
+
+</section>
+  
 <script>
 
 /* carta */
@@ -431,6 +522,20 @@ corazon.remove();
 },4000);
 
 },700);
+
+/* movimiento jaque mate */
+
+const pieza=document.getElementById("pieza");
+const destino=document.getElementById("destino");
+const mensaje=document.getElementById("mensajeMate");
+
+pieza.addEventListener("click",()=>{
+
+destino.appendChild(pieza);
+
+mensaje.classList.add("visible");
+
+});
   
 </script>
 
